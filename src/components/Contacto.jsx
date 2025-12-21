@@ -1,4 +1,4 @@
-import cremas from "../assets/images/cremas.jpg";
+import cremas from "../assets/myimages/cremas.jpg";
 
 function Contacto() {
   return (

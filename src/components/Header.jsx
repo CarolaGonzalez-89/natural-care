@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
-import logo from "../assets/images/icono-header.png";
+import logo from "../assets/myimages/icono-header.png";
+import carrito from "../assets/myimages/carrito.png";
 
 function Header() {
   return (
@@ -7,7 +8,7 @@ function Header() {
       <div className="div_headerContainer">
         <img className="logo-header" src={logo} alt="logo corazon crema" />
         <p className="parrafo_Header">
-          Productos Pensados Para la Salud de Tu Piel{" "}
+          Productos Pensados Para la Salud de Tu Piel
         </p>
       </div>
 
@@ -20,6 +21,13 @@ function Header() {
         </NavLink>
         <NavLink className="nav-link" to="/contacto">
           Contacto
+        </NavLink>
+        <NavLink className="nav-link" to="/carrito-compras">
+          <img
+            className="carrito"
+            src={carrito}
+            alt="imagen de carrito de compras"
+          />
         </NavLink>
       </nav>
     </header>
