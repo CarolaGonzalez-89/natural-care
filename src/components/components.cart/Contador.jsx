@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 function Contador({ onConfirm }) {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(1);
 
   const handleChange = (e) => {
     const inputValue = parseInt(e.target.value);
-    setValue(isNaN(inputValue) ? 0 : inputValue);
+    setValue(isNaN(inputValue) ? 1 : inputValue);
   };
 
   const handleClick = () => {
@@ -21,7 +21,12 @@ function Contador({ onConfirm }) {
         value={value}
         onChange={handleChange}
       />
-      <input className="boton" type="button" value="Agregar al carrito" onClick={handleClick} />
+      <input
+        className="boton"
+        type="button"
+        value="Agregar al carrito"
+        onClick={handleClick}
+      />
     </>
   );
 }

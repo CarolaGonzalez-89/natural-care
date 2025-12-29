@@ -1,4 +1,4 @@
-import fondo from "../assets/myimages/fondo-mar.jpg";
+import fondo from "../../assets/myimages/fondo-mar.jpg";
 
 function Inicio() {
   return (

@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
-import logo from "../assets/myimages/icono-header.png";
-import carrito from "../assets/myimages/carrito.png";
+import logo from "../../assets/myimages/icono-header.png";
+import CartWidget from "../components.cart/CartWidget";
+
 
 function Header() {
   return (
@@ -23,11 +24,7 @@ function Header() {
           Contacto
         </NavLink>
         <NavLink className="nav-link" to="/carrito-compras">
-          <img
-            className="carrito"
-            src={carrito}
-            alt="imagen de carrito de compras"
-          />
+         <CartWidget/>
         </NavLink>
       </nav>
     </header>

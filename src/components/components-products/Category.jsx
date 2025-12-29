@@ -1,16 +1,31 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { fetchProducts } from "../../back.js/productosback";
-import Card from "./Card";
+import Card from "../components-common/Card";
 import LinkCategory from "./LinkCategory";
+import { app } from "../../firebase";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 
 function Category() {
   const { category } = useParams();
   const [productCategory, setProductCategory] = useState([]);
 
   useEffect(() => {
-    fetchProducts().then((data) => setProductCategory(data));
-  }, [category]);
+    const db = getFirestore(app);
+    const misProductos = collection(db, "productos");
+    const consulta = getDocs(misProductos);
+    consulta
+      .then((resultado) => {
+        const resultadoConFormato = resultado.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+
+        setProductCategory(resultadoConFormato);
+      })
+      .catch((error) => {
+        console.log("Error al traer los documentos:", error);
+      });
+  }, []);
 
   const filterProducts = productCategory.filter(
     (product) => product.category === category
@@ -18,7 +33,6 @@ function Category() {
 
   return (
     <>
-    
       <h1 className="h1-productos">Nuestra Línea de Productos</h1>
       <LinkCategory />
       <div className="div_Productos">

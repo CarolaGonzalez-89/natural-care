@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+
 /*------------------------------HEADER----------------------------- */
 
 .logo-header {
@@ -201,7 +202,6 @@ ul {
   background-color: rgba(0, 0, 0, 0.5);
   display: grid;
   place-content: center;
-
 }
 
 .popup__container {
@@ -209,7 +209,7 @@ ul {
   padding: 10px;
   border-radius: 10px;
   border-left: 40px solid #a55983;
- }
+}
 
 /*--------------------------FOOTER-------------------------------*/
 
@@ -288,4 +288,127 @@ footer {
 .h2-category {
   text-transform: uppercase;
   text-decoration: solid;
+}
+
+/*---------------------------CARRITO-----------------------------*/
+.cart {margin: 20px; }
+.carrito-page {background-color: #bb8aa7;}
+
+.box-cart {
+  background-color: rgb(228, 209, 226);
+  border-radius: 2%;
+  width: 40%;
+  height: auto;
+  padding: 20px;
+  gap: 20px;
+  margin: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto auto auto;
+  grid-template-areas:
+    "img h2"
+    "img pp"
+    "img pq"
+    "img pt"
+    "img bt";
+  justify-content: center;
+  align-items: center;
+}
+
+.item-img {
+  grid-area:img;
+  width: 200px;
+  height: auto;
+  margin: 30px; 
+}
+.item-name {
+  grid-area: h2;
+}
+.item-price {
+  grid-area: pp;
+}
+.item-quantity {
+  grid-area:pq ;
+}
+.item-total {grid-area: pt ; }
+
+.item-button {grid-area: bt;
+  
+}
+.box-cart-buttons {background-color: rgb(228, 209, 226);
+  border-radius: 2%;
+  width: 30%;
+  height: auto;
+  padding: 30px;
+  gap: 20px;
+  margin: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+  "h2 h2"
+    "p bv"
+    "pp bc";
+  justify-content: center;
+  align-items: center;
+ 
+}
+.item-quantity-2 {
+  grid-area: p;
+}
+
+.cart-resume {
+  grid-area: h2;
+}
+
+.item-total-2 {
+  grid-area: pp;
+}
+ .item-button-2 {grid-area: bv;
+  
+}
+.item-button-3 {grid-area: bc;
+  
+}
+
+
+
+.box-cart-buttons {
+  border: 1px solid #ddd;
+  padding: 16px;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-compra {
+  background: #e2d4de;
+  padding: 20px;
+  border-radius: 12px;        
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+.cart-container {
+  display: flex;
+  gap: 10px;
+}
+
+.box-cart {
+  flex: 2;
+}
+
+.box-cart-buttons {
+  flex: 1;
 }
